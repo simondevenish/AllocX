@@ -1,0 +1,39 @@
+# Node and npm
+node_modules
+
+# Python
+__pycache__/
+*.py[cod]
+
+# CMake
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Git
+.git
+.gitignore
+
+# VSCode and IDE
+.vscode/
+.devcontainer/
+
+# Temporary files
+*.swp
+*.tmp
+*.log
+*.bak
+*.swo
+*.DS_Store
+
+# System files
+Thumbs.db
+desktop.ini
+
+# Other
+*.tar
+*.zip
+*.gz
+*.rar
+*.7z
