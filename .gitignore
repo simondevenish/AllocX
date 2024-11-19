@@ -30,3 +30,56 @@
 *.exe
 *.out
 *.app
+
+# CMake build output
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+
+# Debugging and profiling tools
+*.gcda
+*.gcno
+*.gcov
+
+# IDEs and editors
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# System-specific files
+*.out
+*.dSYM/
+*.stackdump
+*.elf
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Node.js
+node_modules/
+
+# Archives
+*.tar
+*.zip
+*.gz
+*.rar
+*.7z
+
+# Docker
+docker-compose.override.yml
+.dockerignore

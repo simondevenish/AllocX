@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  allocx-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace:cached
+    ports:
+      - 8080:8080 # Example port mapping
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
+    command: /bin/bash
