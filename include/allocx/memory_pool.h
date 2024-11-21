@@ -5,7 +5,42 @@
 #include "allocx_atomic.h"      // Atomic utilities for thread safety
 #include "allocx_errors.h"      // Error return codes
 
-// Memory pool structure
+/**
+ * AllocXMemoryPool:
+ *
+ * A memory pool that manages a fixed number of memory blocks. The memory pool enables
+ * allocation and deallocation of blocks without the performance hit of repeatedly
+ * requesting memory from the system.
+ *
+ * Key Fields:
+ * - `memory_start`: A pointer to the start of the contiguous memory region managed by the pool.
+ * - `block_size`: The size of each memory block in bytes.
+ * - `total_blocks`: The total number of blocks in the pool.
+ * - `free_list`: A bitmap that tracks the allocation status of each block in the pool.
+ *   - Each bit in the `free_list` represents the status of a single block.
+ *     - `0`: The block is free (available for allocation).
+ *     - `1`: The block is allocated (in use).
+ *   - For example - if the `free_list` is:
+ *       byte:    0b00001101
+ *       blocks:  [1][2][3][4][5][6][7][8]
+ *       status:   A  F  A  F  F  F  A  A
+ *     In this case:
+ *       - Blocks 1, 3, 7, and 8 are allocated (bit = 1).
+ *       - Blocks 2, 4, 5, and 6 are free (bit = 0).
+ *   - The number of bytes required for the `free_list` is calculated as:
+ *     `ceil(total_blocks / 8)` to account for one bit per block.
+ * - `free_count`: An atomic counter representing the number of free blocks in the pool.
+ * - `allocated_count`: An atomic counter representing the number of allocated blocks.
+ *
+ * Operations:
+ * - ALLOCATION:
+ *   - A block is allocated by finding the first `0` bit in the `free_list` and
+ *     marking it as `1` (allocated) using a bitwise OR operation.
+ *   - The `free_count` is decremented, and the `allocated_count` is incremented atomically.
+ * - DEALLOCATION:
+ *   - A block is freed by marking its corresponding bit in the `free_list` as `0`
+ *   - The `free_count` is incremented, and the `allocated_count` is decremented atomically.
+ */
 typedef struct AllocXMemoryPool {
     mem_ptr_t memory_start;          // Start of the memory region
     mem_size_t block_size;           // Size of each block
