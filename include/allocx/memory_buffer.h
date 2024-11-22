@@ -1,6 +1,11 @@
 #ifndef ALLOCX_BUFFER_H
 #define ALLOCX_BUFFER_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 #include "allocx_core_types.h"
 #include "allocx_atomic.h"
 #include "allocx_errors.h"
@@ -82,5 +87,9 @@ void allocx_buffer_compact(AllocXBuffer *buf);
  * @return ALLOCX_SUCCESS on success, or an error code
  */
 allocx_error_t allocx_buffer_append(AllocXBuffer *dst, const AllocXBuffer *src);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_BUFFER_H

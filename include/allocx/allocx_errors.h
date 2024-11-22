@@ -1,6 +1,10 @@
 #ifndef ALLOCX_ERRORS_H
 #define ALLOCX_ERRORS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef enum {
     ALLOCX_SUCCESS = 0,
     ALLOCX_ERROR_OUT_OF_MEMORY,
@@ -9,5 +13,9 @@ typedef enum {
     ALLOCX_ERROR_OVERFLOW,
     ALLOCX_ERROR_UNKNOWN
 } allocx_error_t;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_ERRORS_H

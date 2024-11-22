@@ -1,6 +1,11 @@
 #ifndef ALLOCX_CORE_TYPES_H
 #define ALLOCX_CORE_TYPES_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 #include <stddef.h>
 #include <stdint.h>
 
@@ -30,5 +35,9 @@ typedef int64_t i64;
 typedef void* mem_ptr_t;   // Generic memory pointer
 typedef usize mem_size_t;  // Memory size in bytes
 typedef isize mem_offset_t; // Memory offset
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_CORE_TYPES_H

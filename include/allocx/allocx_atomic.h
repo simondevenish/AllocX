@@ -1,6 +1,10 @@
 #ifndef ALLOCX_ATOMIC_H
 #define ALLOCX_ATOMIC_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdatomic.h>
 
 // Memory order macros
@@ -26,5 +30,9 @@
 #define ALLOCX_FETCH_SUB(ptr, value) __atomic_fetch_sub(ptr, value, __ATOMIC_SEQ_CST)
 #define ALLOCX_FETCH_AND(ptr, value) __atomic_fetch_and(ptr, value, __ATOMIC_SEQ_CST)
 #define ALLOCX_FETCH_OR(ptr, value)  __atomic_fetch_or(ptr, value, __ATOMIC_SEQ_CST)
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_ATOMIC_H

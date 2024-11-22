@@ -1,6 +1,10 @@
 #ifndef ALLOCX_BITWISE_UTILS_H
 #define ALLOCX_BITWISE_UTILS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "allocx_core_types.h"
 
 // Get the Nth bit of a value
@@ -47,5 +51,9 @@
 
 // Find the position of the lowest set bit (zero-based)
 #define ALLOCX_LOWEST_BIT_POSITION(value) (__builtin_ctzll(value))
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_BITWISE_UTILS_H

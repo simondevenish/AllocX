@@ -1,6 +1,10 @@
 #ifndef ALLOCX_MEMORY_POOL_H
 #define ALLOCX_MEMORY_POOL_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "allocx_core_types.h"  // Core types like usize, u8, etc.
 #include "allocx_atomic.h"      // Atomic utilities for thread safety
 #include "allocx_errors.h"      // Error return codes
@@ -82,5 +86,9 @@ void allocx_memory_pool_free(AllocXMemoryPool* pool, mem_ptr_t block);
  * @param pool Pointer to the AllocXMemoryPool structure
  */
 void allocx_memory_pool_destroy(AllocXMemoryPool* pool);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_MEMORY_POOL_H

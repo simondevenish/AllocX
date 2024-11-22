@@ -1,6 +1,10 @@
 #ifndef ALLOCX_DEBUG_H
 #define ALLOCX_DEBUG_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
 
 // Debug Logging
@@ -20,5 +24,9 @@
         } \
         fprintf(stderr, "\n"); \
     } while (0)
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_DEBUG_H

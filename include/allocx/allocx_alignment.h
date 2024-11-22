@@ -1,6 +1,10 @@
 #ifndef ALLOCX_ALIGNMENT_H
 #define ALLOCX_ALIGNMENT_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "allocx_core_types.h"
 
 // Alignment macros
@@ -13,5 +17,9 @@ typedef u8 align8_t __attribute__((aligned(8)));
 typedef u16 align16_t __attribute__((aligned(16)));
 typedef u32 align32_t __attribute__((aligned(32)));
 typedef u64 align64_t __attribute__((aligned(64)));
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // ALLOCX_ALIGNMENT_H
