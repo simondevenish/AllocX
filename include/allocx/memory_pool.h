@@ -21,7 +21,7 @@
  *     - `0`: The block is free (available for allocation).
  *     - `1`: The block is allocated (in use).
  *   - For example - if the `free_list` is:
- *       byte:    0b00001101
+ *       byte:    0b11000101
  *       blocks:  [1][2][3][4][5][6][7][8]
  *       status:   A  F  A  F  F  F  A  A
  *     In this case:
