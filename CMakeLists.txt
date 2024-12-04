@@ -36,24 +36,24 @@ set(ALLOCX_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(ALLOCX_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 # Create the AllocX library target
-add_library(allocx STATIC
+add_library(AllocX STATIC
     ${ALLOCX_SOURCE_DIR}/memory_pool.c
     ${ALLOCX_SOURCE_DIR}/memory_buffer.c
 )
 
 # Include directories
-target_include_directories(allocx
+target_include_directories(AllocX
     PUBLIC ${ALLOCX_INCLUDE_DIR}
 )
 
 # Library properties
-set_target_properties(allocx PROPERTIES
+set_target_properties(AllocX PROPERTIES
     OUTPUT_NAME allocx
     POSITION_INDEPENDENT_CODE ON
 )
 
 # Install AllocX
-install(TARGETS allocx
+install(TARGETS AllocX
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
