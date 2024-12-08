@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.16)
 project(AllocX
     VERSION 1.0.0
     DESCRIPTION "High-performance, cross-platform memory management library for low-latency systems"
-    LANGUAGES C
+    LANGUAGES C CXX
 )
 
 # Set C standard
