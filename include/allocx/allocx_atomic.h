@@ -5,8 +5,11 @@
 extern "C" {
 #endif
 
+#ifdef _MSC_VER
+#include <atomic>
+#else
 #include <stdatomic.h>
-
+#endif
 // Memory order macros
 #define ALLOCX_MEMORY_ORDER_RELAXED memory_order_relaxed
 #define ALLOCX_MEMORY_ORDER_ACQUIRE memory_order_acquire
