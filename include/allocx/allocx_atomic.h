@@ -1,15 +1,16 @@
 #ifndef ALLOCX_ATOMIC_H
 #define ALLOCX_ATOMIC_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #ifdef _MSC_VER
 #include <atomic>
 #else
 #include <stdatomic.h>
 #endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Memory order macros
 #define ALLOCX_MEMORY_ORDER_RELAXED memory_order_relaxed
 #define ALLOCX_MEMORY_ORDER_ACQUIRE memory_order_acquire
