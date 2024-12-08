@@ -14,7 +14,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
 # Enable testing
-include(CTest)
+#include(CTest)
 
 # Enable compile warnings
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
