@@ -2,7 +2,7 @@
 #define ALLOCX_ATOMIC_H
 
 #ifdef _MSC_VER
-#include <atomic>
+#include <Windows.h>
 #else
 #include <stdatomic.h>
 #endif
