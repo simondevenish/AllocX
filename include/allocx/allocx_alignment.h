@@ -13,10 +13,17 @@ extern "C" {
 #define IS_ALIGNED(value, alignment) (((value) & ((alignment)-1)) == 0)
 
 // Alignment types
+#ifdef _MSC_VER
+typedef __declspec(align(8))  u8 align8_t;
+typedef __declspec(align(16)) u16 align16_t;
+typedef __declspec(align(32)) u32 align32_t;
+typedef __declspec(align(64)) u64 align64_t;
+#else
 typedef u8 align8_t __attribute__((aligned(8)));
 typedef u16 align16_t __attribute__((aligned(16)));
 typedef u32 align32_t __attribute__((aligned(32)));
 typedef u64 align64_t __attribute__((aligned(64)));
+#endif
 
 #ifdef __cplusplus
 }
