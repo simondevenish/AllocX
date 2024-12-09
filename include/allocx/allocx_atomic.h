@@ -3,6 +3,7 @@
 
 #ifdef _MSC_VER
 #include <Windows.h>
+typedef volatile size_t atomic_size_t;
 #else
 #include <stdatomic.h>
 #endif
